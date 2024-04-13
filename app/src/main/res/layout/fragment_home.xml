@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#00FFEEF2"
+    tools:context=".View.Fragment.Home">
+
+    <SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/border"
+        android:iconifiedByDefault="false"
+        android:maxLines="1"
+        android:paddingRight="10dp"
+        android:queryHint="Search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_manufacturer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_view"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="10dp"
+        tools:listitem="@layout/item_manufacturer"
+        android:paddingVertical="5dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sf_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rcv_manufacturer">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:itemCount="4"
+            tools:listitem="@layout/item_phone"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+        <ImageButton
+            android:id="@+id/btn_lui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00000000"
+            android:src="@drawable/back"/>
+        <TextView
+            android:id="@+id/tv_sotrang"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="1"/>
+        <ImageButton
+            android:id="@+id/btn_tien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00000000"
+            android:src="@drawable/next"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Fragment.Cart">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_checkout"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/border"
+                android:text="Check Out"/>
+            <TextView
+                android:id="@+id/tv_clearall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:text="Clear all"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_nocart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_below="@+id/layout"
+            android:visibility="invisible"
+            android:layout_margin="20dp"
+            android:text="No products in the cart"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_cart"
+            android:layout_below="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+</FrameLayout>
